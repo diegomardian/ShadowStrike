@@ -46,7 +46,7 @@
                           </Group>
                       </Group>
                       <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
-                      <Component id="jButton2" min="-2" pref="41" max="-2" attributes="0"/>
+                      <Component id="OpenFileButton" min="-2" pref="41" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace min="-2" max="-2" attributes="0"/>
@@ -66,7 +66,7 @@
               <Component id="jScrollPane1" min="-2" pref="39" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jButton2" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="OpenFileButton" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="fileLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="FileTextField" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -160,14 +160,14 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton2">
+    <Component class="javax.swing.JButton" name="OpenFileButton">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/folderClosedIcon.png"/>
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="OpenFileButtonActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="LocalHostLabel">
