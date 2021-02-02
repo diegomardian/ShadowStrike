@@ -1,1 +1,0 @@
-packageSearchIndex = [{"l":"com.shadowstrike.Controllers"},{"l":"com.shadowstrike.Dialogs"},{"l":"com.shadowstrike.Utils"}]
