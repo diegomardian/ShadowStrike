@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <EmptySpace min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                  <Component id="jScrollPane1" alignment="1" max="32767" attributes="0"/>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="jLabel1" min="-2" pref="84" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jTextField3" min="-2" pref="270" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                      <Component id="jLabel5" alignment="1" pref="84" max="32767" attributes="0"/>
+                                      <Component id="jLabel2" alignment="1" max="32767" attributes="0"/>
+                                      <Component id="jLabel3" alignment="1" max="32767" attributes="0"/>
+                                  </Group>
+                                  <Component id="jLabel4" alignment="0" min="-2" pref="84" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="103" alignment="0" groupAlignment="0" attributes="0">
+                                      <Group type="103" alignment="0" groupAlignment="0" attributes="0">
+                                          <Component id="jTextField5" alignment="0" min="-2" pref="270" max="-2" attributes="0"/>
+                                          <Component id="jTextField4" alignment="1" min="-2" pref="270" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Component id="jTextField2" alignment="1" min="-2" pref="270" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="jComboBox1" alignment="1" min="-2" pref="270" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jButton1" min="-2" pref="97" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jButton4" min="-2" pref="73" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jButton2" min="-2" pref="41" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <Component id="jScrollPane1" min="-2" pref="39" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jButton2" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jTextField3" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                      <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="7" pref="7" max="-2" attributes="0"/>
+                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jTextField2" min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jTextField4" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jTextField5" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jComboBox1" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jButton1" alignment="0" max="32767" attributes="0"/>
+                  <Component id="jButton4" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+      <AuxValues>
+        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+      </AuxValues>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <SubComponents>
+        <Component class="javax.swing.JTextPane" name="jTextPane1">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="text" type="java.lang.String" value="Host a file with Shadow Strike&apos;s web server"/>
+            <Property name="focusable" type="boolean" value="false"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Component class="javax.swing.JLabel" name="jLabel1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="File:"/>
+        <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[76, 20]"/>
+        </Property>
+        <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[76, 20]"/>
+        </Property>
+        <Property name="opaque" type="boolean" value="true"/>
+        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[76, 20]"/>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTextField3">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="g"/>
+        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[19, 27]"/>
+        </Property>
+        <Property name="requestFocusEnabled" type="boolean" value="false"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField3ActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTextField4">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="127.0.0.1"/>
+        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[72, 27]"/>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel2">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Local URI:"/>
+        <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[66, 20]"/>
+        </Property>
+        <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[66, 20]"/>
+        </Property>
+        <Property name="name" type="java.lang.String" value="" noResource="true"/>
+        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[66, 20]"/>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="jButton2">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/folderClosedIcon.png"/>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTextField2">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="/download/file.ext"/>
+        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[131, 27]"/>
+        </Property>
+        <Property name="requestFocusEnabled" type="boolean" value="false"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel3">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Local Host:"/>
+        <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[76, 20]"/>
+        </Property>
+        <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[76, 20]"/>
+        </Property>
+        <Property name="name" type="java.lang.String" value="" noResource="true"/>
+        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[76, 20]"/>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel4">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Local Port:"/>
+        <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[76, 20]"/>
+        </Property>
+        <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[76, 20]"/>
+        </Property>
+        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[76, 20]"/>
+        </Property>
+        <Property name="requestFocusEnabled" type="boolean" value="false"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTextField5">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="80"/>
+        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[29, 27]"/>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField5ActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="jComboBox1">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+          <Connection code="new javax.swing.DefaultComboBoxModel&lt;&gt;(items)" type="code"/>
+        </Property>
+        <Property name="name" type="java.lang.String" value="" noResource="true"/>
+        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[42, 27]"/>
+        </Property>
+        <Property name="requestFocusEnabled" type="boolean" value="false"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBox1ActionPerformed"/>
+      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="String[] items = new String[]{&quot;automatic&quot;, &quot;application/octect-stream::any&quot;, &quot;application/acad::dwg&quot;, &quot;application/arj::arj&quot;, &quot;application/astound::asn&quot;, &quot;application/clariscad::ccad&quot;, &quot;application/drafting::drw&quot;, &quot;application/dxf::dxf&quot;, &quot;application/hta::hta&quot;, &quot;application/i-deas::unv&quot;, &quot;application/iges::igs&quot;, &quot;application/java-archive::jar&quot;, &quot;application/mac-binhex40::hqx&quot;, &quot;application/msaccess::mdb&quot;, &quot;application/msexcel::xlw&quot;, &quot;application/mspowerpoint::ppt&quot;, &quot;application/msproject::mpp&quot;, &quot;application/msword::w6w&quot;, &quot;application/mswrite::wri&quot;, &quot;application/octet-stream::bin&quot;, &quot;application/oda::oda&quot;, &quot;application/pdf::pdf&quot;, &quot;application/postscript::ps&quot;, &quot;application/pro_eng::prt&quot;, &quot;application/rtf::rtf&quot;, &quot;application/set::set&quot;, &quot;application/sla::stl&quot;, &quot;application/solids::sol&quot;, &quot;application/STEP::stp&quot;, &quot;application/vda::vda&quot;, &quot;application/vnd.openxmlformats-officedocument.wordprocessingml.document::docx&quot;, &quot;application/vnd.ms-word.document.macroEnabled.12::docm&quot;, &quot;application/vnd.openxmlformats-officedocument.wordprocessingml.template::dotx&quot;, &quot;application/vnd.ms-word.template.macroEnabled.12::dotm&quot;, &quot;application/vnd.openxmlformats-officedocument.spreadsheetml.sheet::xlsx&quot;, &quot;application/vnd.ms-excel.sheet.macroEnabled.12::xlsm&quot;, &quot;application/vnd.openxmlformats-officedocument.spreadsheetml.template::xltx&quot;, &quot;application/vnd.ms-excel.template.macroEnabled.12::xltm&quot;, &quot;application/vnd.ms-excel.sheet.binary.macroEnabled.12::xlsb&quot;, &quot;application/vnd.ms-excel.addin.macroEnabled.12::xlam&quot;, &quot;application/vnd.openxmlformats-officedocument.presentationml.presentation::pptx&quot;, &quot;application/vnd.ms-powerpoint.presentation.macroEnabled.12::pptm&quot;, &quot;application/vnd.openxmlformats-officedocument.presentationml.slideshow::ppsx&quot;, &quot;application/vnd.ms-powerpoint.slideshow.macroEnabled.12::ppsm&quot;, &quot;application/vnd.openxmlformats-officedocument.presentationml.template::potx&quot;, &quot;application/vnd.ms-powerpoint.template.macroEnabled.12::potm&quot;, &quot;application/vnd.ms-powerpoint.addin.macroEnabled.12::ppam&quot;, &quot;application/vnd.openxmlformats-officedocument.presentationml.slide::sldx&quot;, &quot;application/vnd.ms-powerpoint.slide.macroEnabled.12::sldm&quot;, &quot;application/msonenote::one&quot;, &quot;application/msonenote::onetoc2&quot;, &quot;application/msonenote::onetmp&quot;, &quot;application/msonenote::onepkg&quot;, &quot;application/vnd.ms-officetheme::thmx&quot;, &quot;application/x-bcpio::bcpio&quot;, &quot;application/x-cpio::cpio&quot;, &quot;application/x-csh::csh&quot;, &quot;application/x-director::dxr&quot;, &quot;application/x-dvi::dvi&quot;, &quot;application/x-dwf::dwf&quot;, &quot;application/x-gtar::gtar&quot;, &quot;application/x-gzip::gzip&quot;, &quot;application/x-hdf::hdf&quot;, &quot;application/x-javascript::js&quot;, &quot;application/x-latex::latex&quot;, &quot;application/x-macbinary::bin&quot;, &quot;application/x-midi::mid&quot;, &quot;application/x-mif::mif&quot;, &quot;application/x-netcdf::nc&quot;, &quot;application/x-sh::sh&quot;, &quot;application/x-shar::shar&quot;, &quot;application/x-shockwave-flash::swf&quot;, &quot;application/x-stuffit::sit&quot;, &quot;application/x-sv4cpio::sv4cpio&quot;, &quot;application/x-sv4crc::sv4crc&quot;, &quot;application/x-tar::tar&quot;, &quot;application/x-tcl::tcl&quot;, &quot;application/x-tex::tex&quot;, &quot;application/x-texinfo::texinfo&quot;, &quot;application/x-troff::tr&quot;, &quot;application/x-troff-man::man&quot;, &quot;application/x-troff-me::me&quot;, &quot;application/x-troff-ms::ms&quot;, &quot;application/x-ustar::ustar&quot;, &quot;application/x-wais-source::src&quot;, &quot;application/x-winhelp::hlp&quot;, &quot;application/zip::zip&quot;, &quot;audio/basic::snd&quot;, &quot;audio/midi::midi&quot;, &quot;audio/x-aiff::aiff&quot;, &quot;audio/x-mpeg::mp3&quot;, &quot;audio/x-pn-realaudio::ram&quot;, &quot;audio/x-pn-realaudio-plugin::rpm&quot;, &quot;audio/x-voice::voc&quot;, &quot;audio/x-wav::wav&quot;, &quot;image/bmp::bmp&quot;, &quot;image/gif::gif&quot;, &quot;image/ief::ief&quot;, &quot;image/jpeg::jpg&quot;, &quot;image/pict::pict&quot;, &quot;image/png::png&quot;, &quot;image/tiff::tiff&quot;, &quot;image/x-cmu-raster::ras&quot;, &quot;image/x-portable-anymap::pnm&quot;, &quot;image/x-portable-bitmap::pbm&quot;, &quot;image/x-portable-graymap::pgm&quot;, &quot;image/x-portable-pixmap::ppm&quot;, &quot;image/x-rgb::rgb&quot;, &quot;image/x-xbitmap::xbm&quot;, &quot;image/x-xpixmap::xpm&quot;, &quot;image/x-xwindowdump::xwd&quot;, &quot;multipart/x-gzip::gzip&quot;, &quot;multipart/x-zip::zip&quot;, &quot;text/html::html&quot;, &quot;text/plain::txt&quot;, &quot;text/richtext::rtx&quot;, &quot;text/tab-separated-values::tsv&quot;, &quot;text/x-setext::etx&quot;, &quot;text/x-sgml::sgml&quot;, &quot;video/mpeg::mpg&quot;, &quot;video/msvideo::avi&quot;, &quot;video/quicktime::qt&quot;, &quot;video/vdo::vdo&quot;, &quot;video/vivo::vivo&quot;, &quot;video/x-sgi-movie::movie&quot;, &quot;x-conference/x-cooltalk::ice&quot;, &quot;x-world/x-svr::svr&quot;, &quot;x-world/x-vrml::wrl&quot;, &quot;x-world/x-vrt::vrt&quot;, &quot;other&quot;};"/>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel5">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Mime  Type:"/>
+        <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[76, 20]"/>
+        </Property>
+        <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[76, 20]"/>
+        </Property>
+        <Property name="name" type="java.lang.String" value="" noResource="true"/>
+        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[76, 20]"/>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="jButton1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Launch"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="jButton4">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Help"/>
+      </Properties>
+    </Component>
+  </SubComponents>
+</Form>
