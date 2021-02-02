@@ -1,0 +1,1 @@
+typeSearchIndex = [{"p":"com.shadowstrike.Controllers","l":"Database"},{"p":"com.shadowstrike.Dialogs","l":"HostFile"},{"p":"com.shadowstrike.Utils","l":"Printer"},{"p":"<Unnamed>","l":"ShadowStrikeMain"},{"p":"com.shadowstrike.Utils","l":"Validator"}]
