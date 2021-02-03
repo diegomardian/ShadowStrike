@@ -1,5 +1,5 @@
 # ShadowStrike
-Shadow Strike is a hacking framework that aids in information gathering, payload generation, payload delivery, and web exploitation.
+Shadow Strike is a hacking framework that aids information gathering, payload generation, payload delivery, and web exploitation.
 # Releases
 Shadow Strike is currenly under development and is not fully ready for use, but the first release is coming soon.
 # Contributing
