@@ -25,8 +25,8 @@ sudo chmod +x build.sh
 cd ShadowStrike
 </pre>
 3. Run the build.sh file
-<pre
-./build.bat
+<pre>
+build.bat
 </pre>
 
 
