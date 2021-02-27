@@ -9,11 +9,11 @@ If you would like to contribute please fork this repository and submit a pull re
 <pre>
 git clone https://github.com/diegomardian/ShadowStrike.git
 </pre>
-3. Navigate to the ShadowStrike directory
+2. Navigate to the ShadowStrike directory
 <pre>
 cd ShadowStrike
 </pre>
-5. Run the build.sh file
+3. Run the build.sh file
 <pre>
 sudo chmod +x build.sh
 ./build.sh
