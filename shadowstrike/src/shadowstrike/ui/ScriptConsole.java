@@ -6,6 +6,7 @@
 package shadowstrike.ui;
 import java.awt.Color;
 import java.awt.event.KeyEvent;
+import java.util.ArrayList;
 import javax.swing.JScrollBar;
 import javax.swing.JTextField;
 import javax.swing.UIDefaults;
@@ -13,6 +14,7 @@ import javax.swing.text.AttributeSet;
 import javax.swing.text.SimpleAttributeSet;
 import javax.swing.text.StyleConstants;
 import javax.swing.text.StyleContext;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.text.StringEscapeUtils;
 import shadowstrike.utils.Printer;
 /**
@@ -143,12 +145,24 @@ public class ScriptConsole extends javax.swing.JPanel {
 
 
     private void executeCommand(String command) {
-        if (command.equals("help")) {
+        String[] commandList = StringUtils.split(command, " ");; 
+//        String[] splits = command.split(" (?=([^\"]*\"[^\"]*\")*[^\"]*$)");
+//        for (int i = 0; i < splits.length; i++) {
+//            commandList.add(splits[i].trim());
+//        }
+        StringUtils.split(command, " ");
+        if (commandList[0].equals("help")) {
             this.writeToConsole("Commands     Description<br>------------------------<br>help       Get help about a command<br>load       Load a script<br>unload    Unload a script<br>syntax    Check the syntax of a script");
         }
-        else if (command.equals("load")) {
-            this.writeToConsole("<font color='green'>[+]<font color='white'>");
-        }        else {
+        else if (commandList[0].equals("load")) {
+            if (commandList.length > 1) {
+                this.writeToConsole("<font color='blue'>[*]<font color='white'> Loading "+commandList[1]);
+            }
+            else {
+                this.writeToConsole("<font color='red'>[-]<font color='white'> Please specify a file to load");
+            }
+        }   
+        else {
             this.writeToConsole("<font color='red'>[-]<font color='white'> Command not found");
         }
     }

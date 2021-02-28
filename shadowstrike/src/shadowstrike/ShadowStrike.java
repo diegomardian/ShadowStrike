@@ -5,6 +5,9 @@
  */
 package shadowstrike;
 
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
+import org.openide.awt.TabbedPaneFactory;
 import shadowstrike.ui.ScriptConsole;
 import shadowstrike.ui.SessionTable;
 
@@ -22,6 +25,7 @@ public class ShadowStrike extends javax.swing.JFrame {
         this.jSplitPane1.setTopComponent(new SessionTable());
         this.MainTabbedPane.add("Script Console", new ScriptConsole());
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -51,6 +55,16 @@ public class ShadowStrike extends javax.swing.JFrame {
 
         jSplitPane1.setDividerLocation(110);
         jSplitPane1.setOrientation(javax.swing.JSplitPane.VERTICAL_SPLIT);
+
+        MainTabbedPane = TabbedPaneFactory.createCloseButtonTabbedPane();
+        MainTabbedPane.addPropertyChangeListener( TabbedPaneFactory.PROP_CLOSE, new PropertyChangeListener() {
+
+            public void propertyChange(PropertyChangeEvent evt) {
+                javax.swing.JTabbedPane pane = (javax.swing.JTabbedPane)evt.getSource();
+                int sel = pane.getSelectedIndex();
+                pane.removeTabAt(sel);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -125,6 +139,7 @@ public class ShadowStrike extends javax.swing.JFrame {
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         // TODO add your handling code here:
+        this.MainTabbedPane.add("Script Console", new ScriptConsole());
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     /**
