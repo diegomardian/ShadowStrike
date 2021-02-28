@@ -16,7 +16,8 @@ cd ShadowStrike
 </pre>
 3. Run the build.sh file. This will create a ShadowStrike.jar file.
 <pre>
-build.sh
+sudo chmod +x build.sh
+sudo ./build.sh
 </pre>
 4. If you want to run Shadow Strike then execute this command in the directory containing ShadowStrike.jar
 <pre>
