@@ -19,8 +19,9 @@ cd ShadowStrike
 sudo chmod +x build.sh
 sudo ./build.sh
 </pre>
-4. If you want to run Shadow Strike then execute this command in the directory containing ShadowStrike.jar
+4. If you want to run Shadow Strike then execute these commands
 <pre>
+cd build
 java -jar ShadowStrike.jar
 </pre>
 ## For Windows
@@ -36,8 +37,9 @@ cd ShadowStrike
 <pre>
 build.bat
 </pre>
-4. If you want to run Shadow Strike then execute this command in the directory containing ShadowStrike.jar
+4. If you want to run Shadow Strike then execute these commands
 <pre>
+cd build
 java -jar ShadowStrike.jar
 </pre>
 # Disclamer
