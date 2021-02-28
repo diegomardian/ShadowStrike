@@ -40,15 +40,15 @@ java -jar ShadowStrike.jar
 1. Clone this github repository if you have not alreay
 <pre>
 git clone https://github.com/diegomardian/ShadowStrike.git
-<pre/>
+</pre>
 3. Navigate to the ShadowStrike directory
 <pre>
 cd ShadowStrike
-<pre/>
+</pre>
 3. Run the build.bat file. This will create a ShadowStrike.jar file.
 <pre>
 build.bat
-<pre/>
+</pre>
 4. If you want to run Shadow Strike then execute this command in the directory containing ShadowStrike.jar
 <pre>
 java -jar ShadowStrike.jar
