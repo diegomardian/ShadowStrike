@@ -10,7 +10,7 @@ import java.beans.PropertyChangeListener;
 import org.openide.awt.TabbedPaneFactory;
 import shadowstrike.ui.ScriptConsole;
 import shadowstrike.ui.SessionTable;
-
+import sleep.runtime.ScriptLoader;
 /**
  *
  * @author root
@@ -20,10 +20,12 @@ public class ShadowStrike extends javax.swing.JFrame {
     /**
      * Creates new form ShadowStrike
      */
+    public ScriptLoader scriptLoader;
     public ShadowStrike() {
         initComponents();
+        this.scriptLoader = new ScriptLoader();
         this.jSplitPane1.setTopComponent(new SessionTable());
-        this.MainTabbedPane.add("Script Console", new ScriptConsole());
+        this.MainTabbedPane.add("Script Console", new ScriptConsole(this));
     }
     
 
@@ -139,7 +141,7 @@ public class ShadowStrike extends javax.swing.JFrame {
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         // TODO add your handling code here:
-        this.MainTabbedPane.add("Script Console", new ScriptConsole());
+        this.MainTabbedPane.add("Script Console", new ScriptConsole(this));
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     /**

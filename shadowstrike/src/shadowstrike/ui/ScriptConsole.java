@@ -6,6 +6,7 @@
 package shadowstrike.ui;
 import java.awt.Color;
 import java.awt.event.KeyEvent;
+import java.io.IOException;
 import java.util.ArrayList;
 import javax.swing.JScrollBar;
 import javax.swing.JTextField;
@@ -16,7 +17,11 @@ import javax.swing.text.StyleConstants;
 import javax.swing.text.StyleContext;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.text.StringEscapeUtils;
+import shadowstrike.ShadowStrike;
 import shadowstrike.utils.Printer;
+import sleep.runtime.ScriptInstance;
+import sleep.runtime.ScriptLoader;
+import sleep.error.YourCodeSucksException;
 /**
  *
  * @author root
@@ -27,8 +32,10 @@ public class ScriptConsole extends javax.swing.JPanel {
      * Creates new form ScriptConole
      */
     public String text;
-    public ScriptConsole() {
+    public ShadowStrike main;
+    public ScriptConsole(ShadowStrike main) {
         initComponents();
+        this.main = main;
         this.jScrollPane2.getViewport().setBackground(Color.BLACK);
         this.jScrollPane2.getViewport().setForeground(Color.WHITE);
         this.text = "";
@@ -145,18 +152,34 @@ public class ScriptConsole extends javax.swing.JPanel {
 
 
     private void executeCommand(String command) {
-        String[] commandList = StringUtils.split(command, " ");; 
-//        String[] splits = command.split(" (?=([^\"]*\"[^\"]*\")*[^\"]*$)");
-//        for (int i = 0; i < splits.length; i++) {
-//            commandList.add(splits[i].trim());
-//        }
-        StringUtils.split(command, " ");
-        if (commandList[0].equals("help")) {
+        ArrayList<String> commandList = new ArrayList<>(); 
+        String[] splits = command.split(" (?=([^\"]*\"[^\"]*\")*[^\"]*$)");
+        for (int i = 0; i < splits.length; i++) {
+            commandList.add(splits[i]);
+        }
+        
+        
+        if (commandList.get(0).equals("help")) {
             this.writeToConsole("Commands     Description<br>------------------------<br>help       Get help about a command<br>load       Load a script<br>unload    Unload a script<br>syntax    Check the syntax of a script");
         }
-        else if (commandList[0].equals("load")) {
-            if (commandList.length > 1) {
-                this.writeToConsole("<font color='blue'>[*]<font color='white'> Loading "+commandList[1]);
+        else if (commandList.get(0).equals("load")) {
+            if (commandList.size() > 1) {
+                this.writeToConsole("<font color='green'>[+]<font color='white'> Load "+commandList.get(0));
+                
+
+                try
+                {
+                   ScriptInstance script = this.main.scriptLoader.loadScript(commandList.get(0));
+                   
+                }
+                catch (YourCodeSucksException syntaxErrors)
+                {
+                   System.out.println(syntaxErrors.formatErrors());
+                }
+                catch (IOException ioError)
+                {
+                    this.writeToConsole("<font color='red'>[-]<font color='white'> System could not find file specified");
+                }
             }
             else {
                 this.writeToConsole("<font color='red'>[-]<font color='white'> Please specify a file to load");
