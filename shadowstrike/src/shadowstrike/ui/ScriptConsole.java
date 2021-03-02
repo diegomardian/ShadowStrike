@@ -19,6 +19,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.text.StringEscapeUtils;
 import shadowstrike.ShadowStrike;
 import shadowstrike.utils.Printer;
+import shadowstrike.utils.Strings;
 import sleep.runtime.ScriptInstance;
 import sleep.runtime.ScriptLoader;
 import sleep.error.YourCodeSucksException;
@@ -152,11 +153,7 @@ public class ScriptConsole extends javax.swing.JPanel {
 
 
     private void executeCommand(String command) {
-        ArrayList<String> commandList = new ArrayList<>(); 
-        String[] splits = command.split(" (?=([^\"]*\"[^\"]*\")*[^\"]*$)");
-        for (int i = 0; i < splits.length; i++) {
-            commandList.add(splits[i]);
-        }
+        ArrayList<String> commandList = Strings.shellSplit(command); 
         
         
         if (commandList.get(0).equals("help")) {
@@ -174,7 +171,7 @@ public class ScriptConsole extends javax.swing.JPanel {
                 }
                 catch (YourCodeSucksException syntaxErrors)
                 {
-                   System.out.println(syntaxErrors.formatErrors());
+                   this.writeToConsole(syntaxErrors.formatErrors());
                 }
                 catch (IOException ioError)
                 {

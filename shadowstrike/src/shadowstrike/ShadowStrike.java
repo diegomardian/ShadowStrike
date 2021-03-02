@@ -23,7 +23,7 @@ public class ShadowStrike extends javax.swing.JFrame {
     public ScriptLoader scriptLoader;
     public ShadowStrike() {
         initComponents();
-        this.scriptLoader = new ScriptLoader();
+        this.scriptLoader = new ScriptLoader(this);
         this.jSplitPane1.setTopComponent(new SessionTable());
         this.MainTabbedPane.add("Script Console", new ScriptConsole(this));
     }

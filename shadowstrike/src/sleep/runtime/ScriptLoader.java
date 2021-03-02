@@ -39,6 +39,7 @@ import java.nio.CharBuffer;
 import java.nio.charset.CharsetDecoder;
 import java.nio.charset.CoderResult;
 import java.util.*;
+import shadowstrike.ShadowStrike;
 
 import sleep.taint.*;
 
@@ -109,7 +110,7 @@ public class ScriptLoader
      * cache for parsed scripts mantained (optionally) by the script loader.
      */
     protected static Map BLOCK_CACHE = null;
-
+    public ShadowStrike main;
     private Block retrieveCacheEntry(String name)
     {
        if (BLOCK_CACHE != null && BLOCK_CACHE.containsKey(name))
@@ -170,8 +171,9 @@ public class ScriptLoader
     /**
      * initializes the script loader
      */
-    public ScriptLoader()
+    public ScriptLoader(ShadowStrike main)
     {
+        this.main = main;
         loadedScripts = new LinkedList();
         scripts = new HashMap();
         bridgesg = new LinkedList();
