@@ -43,11 +43,11 @@ cd build
 java -jar ShadowStrike.jar
 </pre>
 # Donation
-If you would like to support this project please send any amount of cryptocurrency to one of the following wallet addresses
-BTC: 3LnfyT511cotCerjHzpinZiR1a5qW1kuxz
-LTC: MVuKtctV2Ri3uWpq33nHFZTNArpzNs3KSY
-XMR: 8C8WpxBNZic452RpNfK5N5fX3wmXsAE1nESGSi6zHaWRR9GN4ULH9x8UPBqzrCEZmo4M1ehyr2zSGQjQU5VNWDHZGf9FjiN
-BCH: 3PvJz9SJYYCTGYUvw7Xje4faeKbENBEV1i
+If you would like to support this project please send any amount of cryptocurrency to one of the following wallet addresses<br>
+BTC: 3LnfyT511cotCerjHzpinZiR1a5qW1kuxz<br>
+LTC: MVuKtctV2Ri3uWpq33nHFZTNArpzNs3KSY<br>
+XMR: 8C8WpxBNZic452RpNfK5N5fX3wmXsAE1nESGSi6zHaWRR9GN4ULH9x8UPBqzrCEZmo4M1ehyr2zSGQjQU5VNWDHZGf9FjiN<br>
+BCH: 3PvJz9SJYYCTGYUvw7Xje4faeKbENBEV1i<br>
 
 
 # Disclamer
