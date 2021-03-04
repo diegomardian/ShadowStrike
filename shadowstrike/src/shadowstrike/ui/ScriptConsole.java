@@ -23,6 +23,7 @@ import shadowstrike.utils.Strings;
 import sleep.runtime.ScriptInstance;
 import sleep.runtime.ScriptLoader;
 import sleep.error.YourCodeSucksException;
+
 /**
  *
  * @author root
