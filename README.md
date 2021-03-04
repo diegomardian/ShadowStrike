@@ -10,7 +10,7 @@ If you would like to contribute please fork this repository and submit a pull re
 git clone https://github.com/diegomardian/ShadowStrike.git
 </pre>
 2. Download and install netbeans
-3. Open netbeans and go to File->Open Project
+3. Open Netbeans and go to File->Open Project
 4. Naviage to the cloned ShadowStrike folder
 5. Select the shadowstrike folder and click Open Project
 To build Shadow Strike click the hammer icon on the toolbar. If that is not there go to Run->Build Project.
