@@ -4,44 +4,17 @@ Shadow Strike is a hacking framework that aids information gathering, payload ge
 Shadow Strike is currenly under development and is not fully ready for use, but the first release is coming soon.
 # Contributing
 If you would like to contribute please fork this repository and submit a pull request. To run and build Shadow Strike I recomend using [NetBeans](https://netbeans.org).
-# Building and Running Shadow Strike
-## For Linux
+# Building and Running Shadow Strike with netbeans
 1. Clone this github repository if you have not alreay
 <pre>
 git clone https://github.com/diegomardian/ShadowStrike.git
 </pre>
-3. Navigate to the ShadowStrike directory
-<pre>
-cd ShadowStrike
-</pre>
-3. Run the build.sh file. This will create a ShadowStrike.jar file.
-<pre>
-sudo chmod +x build.sh
-sudo ./build.sh
-</pre>
-4. If you want to run Shadow Strike then execute these commands
-<pre>
-cd build
-java -jar ShadowStrike.jar
-</pre>
-## For Windows
-1. Clone this github repository if you have not alreay
-<pre>
-git clone https://github.com/diegomardian/ShadowStrike.git
-</pre>
-3. Navigate to the ShadowStrike directory
-<pre>
-cd ShadowStrike
-</pre>
-3. Run the build.bat file. This will create a ShadowStrike.jar file.
-<pre>
-build.bat
-</pre>
-4. If you want to run Shadow Strike then execute these commands
-<pre>
-cd build
-java -jar ShadowStrike.jar
-</pre>
+2. Download and install netbeans
+3. Open netbeans and go to File->Open Project
+4. Naviage to the cloned ShadowStrike folder
+5. Select the shadowstrike folder and click Open Project
+To build Shadow Strike click the hammer icon on the toolbar. If that is not there go to Run->Build Project.
+To run Shadow Strike click the play icon on the toolbar. If that is not there go to Run->Run Project.
 # Donation
 If you would like to support this project please send any amount of cryptocurrency to one of the following wallet addresses<br>
 BTC: 3LnfyT511cotCerjHzpinZiR1a5qW1kuxz<br>
