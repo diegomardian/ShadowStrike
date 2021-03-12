@@ -222,6 +222,7 @@ public class ConsoleImplementation implements RuntimeWarningWatcher, Loadable, C
              } 
           }
           
+          
       }
 
       
@@ -245,22 +246,7 @@ public class ConsoleImplementation implements RuntimeWarningWatcher, Loadable, C
 
    private void help(String command)
    {
-       if (command.equals("debug"))
-       {
-          getProxy().consolePrintln("debug [script] <level>");
-          getProxy().consolePrintln("   sets the debug level for the specified script");
-          getProxy().consolePrintln("   1 - show critical errors");
-          getProxy().consolePrintln("   2 - show warnings");
-          getProxy().consolePrintln("   4 - strict mode, complain about non-declared variables");
-          getProxy().consolePrintln("   8 - trace all function calls");
-          getProxy().consolePrintln("   to combine options, add their numbers together");
-       }
-       else if (command.equals("env"))
-       {
-          getProxy().consolePrintln("env [functions/other] [regex filter]");
-          getProxy().consolePrintln("   dumps the shared environment, filters output with specified regex");
-       }
-       else if (command.equals("ls"))
+       if (command.equals("ls"))
        {
           getProxy().consolePrintln("ls");
           getProxy().consolePrintln("   lists all of the currently loaded scripts");
@@ -274,16 +260,6 @@ public class ConsoleImplementation implements RuntimeWarningWatcher, Loadable, C
        {
           getProxy().consolePrintln("unload <file>");
           getProxy().consolePrintln("   unloads a script file from the script loader");
-       }
-       else if (command.equals("tree"))
-       {
-          getProxy().consolePrintln("tree [key]");
-          getProxy().consolePrintln("   displays the Abstract Syntax Tree for the specified key");
-       }
-       else if (command.equals("version"))
-       {
-          getProxy().consolePrintln("version");
-          getProxy().consolePrintln("   display the current Sleep version");
        }
        else if (command.equals("x"))
        {
