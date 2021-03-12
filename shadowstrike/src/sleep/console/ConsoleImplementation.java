@@ -271,6 +271,11 @@ public class ConsoleImplementation implements RuntimeWarningWatcher, Loadable, C
           getProxy().consolePrintln("? <predicate expression>");
           getProxy().consolePrintln("   evaluates a sleep predicate expression and displays the truth value");
        }
+       else if (command.equals("e"))
+       {
+          getProxy().consolePrintln("e <statement>");
+          getProxy().consolePrintln("   evaluate a sleep statement");
+       }
        else
        {
           getProxy().consolePrintln("help [command]");
