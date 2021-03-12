@@ -1,13 +1,41 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/* 
+ * BSD 3-Clause License
+ * 
+ * Copyright (c) 2021, Diego Mardian
+ * All rights reserved.
+ * 
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions are met:
+ * 
+ * 1. Redistributions of source code must retain the above copyright notice, this
+ *    list of conditions and the following disclaimer.
+ * 
+ * 2. Redistributions in binary form must reproduce the above copyright notice,
+ *    this list of conditions and the following disclaimer in the documentation
+ *    and/or other materials provided with the distribution.
+ * 
+ * 3. Neither the name of the copyright holder nor the names of its
+ *    contributors may be used to endorse or promote products derived from
+ *    this software without specific prior written permission.
+ * 
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+ * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+ * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 package shadowstrike.ui;
 import java.awt.Color;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Hashtable;
 import javax.swing.JScrollBar;
 import javax.swing.JTextField;
 import javax.swing.UIDefaults;
@@ -20,9 +48,12 @@ import org.apache.commons.text.StringEscapeUtils;
 import shadowstrike.ShadowStrike;
 import shadowstrike.utils.Printer;
 import shadowstrike.utils.Strings;
+import sleep.console.ConsoleImplementation;
+import sleep.console.ShadowScriptProxy;
 import sleep.runtime.ScriptInstance;
 import sleep.runtime.ScriptLoader;
 import sleep.error.YourCodeSucksException;
+import sleep.interfaces.Variable;
 
 /**
  *
@@ -35,13 +66,38 @@ public class ScriptConsole extends javax.swing.JPanel {
      */
     public String text;
     public ShadowStrike main;
+    public volatile ArrayList<String> in;
+    public ConsoleImplementation console;
+    
     public ScriptConsole(ShadowStrike main) {
         initComponents();
         this.main = main;
         this.jScrollPane2.getViewport().setBackground(Color.BLACK);
         this.jScrollPane2.getViewport().setForeground(Color.WHITE);
         this.text = "";
+        this.in = new ArrayList<String>();
+        this.console = new ConsoleImplementation(null, null, this.main.scriptLoader);
+        this.console.setProxy(new ShadowScriptProxy(this));
+        Thread consoleThread = new Thread(new ConsoleThread(console)); 
+        consoleThread.start();
+        
     }
+    private class ConsoleThread implements Runnable { 
+        public ConsoleImplementation console;
+        public ConsoleThread(ConsoleImplementation console) {
+            this.console = console;
+        }
+        public void run() 
+        { 
+            try {
+                this.console.rppl();
+            }
+            catch (IOException e) {
+
+            }
+        } 
+    } 
+
     
 
     /**
@@ -64,6 +120,7 @@ public class ScriptConsole extends javax.swing.JPanel {
         sTextField1.setBackground(java.awt.Color.black);
         sTextField1.setBorder(null);
         sTextField1.setForeground(java.awt.Color.white);
+        sTextField1.setText("   ");
         sTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 sTextField1ActionPerformed(evt);
@@ -76,6 +133,7 @@ public class ScriptConsole extends javax.swing.JPanel {
         });
 
         jLabel1.setBackground(java.awt.Color.black);
+        jLabel1.setFont(new java.awt.Font("Cantarell", 0, 16)); // NOI18N
         jLabel1.setForeground(java.awt.Color.white);
         jLabel1.setText(" shadowscript> ");
         jLabel1.setToolTipText("");
@@ -93,7 +151,7 @@ public class ScriptConsole extends javax.swing.JPanel {
         jEditorPane1.setBackground(bgColor);
         jEditorPane1.setBorder(null);
         jEditorPane1.setContentType("text/html"); // NOI18N
-        jEditorPane1.setFont(new java.awt.Font("Cantarell", 0, 14)); // NOI18N
+        jEditorPane1.setFont(new java.awt.Font("Cantarell", 0, 15)); // NOI18N
         jEditorPane1.setForeground(java.awt.Color.white);
         jEditorPane1.setText("<html>\n  <body>\n  </body>\n</html>\n");
         jScrollPane2.setViewportView(jEditorPane1);
@@ -105,13 +163,13 @@ public class ScriptConsole extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jLabel1)
                 .addGap(0, 0, 0)
-                .addComponent(sTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 335, Short.MAX_VALUE))
+                .addComponent(sTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 327, Short.MAX_VALUE))
             .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 117, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE)
                 .addGap(0, 0, 0)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
@@ -130,8 +188,9 @@ public class ScriptConsole extends javax.swing.JPanel {
                 this.writeToConsole("shadowscript>");
             }
             else {
-                this.writeToConsole("shadowscript> "+StringEscapeUtils.escapeHtml4(this.sTextField1.getText()));
-                this.executeCommand(this.sTextField1.getText());
+//                this.writeToConsole("shadowscript> "+StringEscapeUtils.escapeHtml4(this.sTextField1.getText()));
+//                this.executeCommand(this.sTextField1.getText());
+                in.add(this.sTextField1.getText());
                 this.sTextField1.setText("");
             }
             
@@ -146,9 +205,20 @@ public class ScriptConsole extends javax.swing.JPanel {
     private shadowstrike.components.STextField sTextField1;
     // End of variables declaration//GEN-END:variables
 
-    private void writeToConsole(String command) {
+    public void writeToConsole(Object command) {
         text += command + "<br>";
         this.jEditorPane1.setText("<html><body>"+text+"<br><body/></html>");
+    }
+    public String readLine() {
+        while (true) {
+//            System.out.println();
+            if (!(in.size() == 0)) {
+                String val = in.get(0);
+                in.remove(0);
+                System.out.println(val);
+                return val;
+            }
+        }
     }
 
 
@@ -162,17 +232,18 @@ public class ScriptConsole extends javax.swing.JPanel {
         }
         else if (commandList.get(0).equals("load")) {
             if (commandList.size() > 1) {
-                this.writeToConsole("<font color='green'>[+]<font color='white'> Load "+commandList.get(0));
+                this.writeToConsole("<font color='green'>[+]<font color='white'> Loading "+commandList.get(1));
                 
 
                 try
                 {
-                   ScriptInstance script = this.main.scriptLoader.loadScript(commandList.get(0));
-                   
+                   ScriptInstance script = this.main.scriptLoader.loadScript(commandList.get(1));
+                   script.runScript();
                 }
                 catch (YourCodeSucksException syntaxErrors)
                 {
-                   this.writeToConsole(syntaxErrors.formatErrors());
+                   this.writeToConsole("<font color='red'>[-]<font color='white'> Could not load "+commandList.get(1));
+                   this.writeToConsole(syntaxErrors.formatErrors().replace("\n", "<br>"));
                 }
                 catch (IOException ioError)
                 {
