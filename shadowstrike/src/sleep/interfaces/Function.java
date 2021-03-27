@@ -94,7 +94,7 @@ import java.util.Stack;
  * @see sleep.runtime.ScriptInstance
  * @see sleep.runtime.SleepUtils
  */
-public interface Function extends java.io.Serializable
+public interface Fun ction extends java.io.Serializable
 {
    /**
     * Evaluate a function and return the resulting scalar.  Only the sleep interpreter should ever call this function.  If you have

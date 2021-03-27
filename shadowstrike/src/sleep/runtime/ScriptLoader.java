@@ -213,12 +213,13 @@ public class ScriptLoader
         addGlobalBridge(new BasicNumbers());
         addGlobalBridge(new BasicStrings());
         addGlobalBridge(new BasicUtilities());
-        addGlobalBridge(new BasicIO());
+        addGlobalBridge(new BasicIO(this.main));
         addGlobalBridge(new FileSystemBridge());
         addGlobalBridge(new DefaultEnvironment());
         addGlobalBridge(new DefaultVariable());
         addGlobalBridge(new RegexBridge());
         addGlobalBridge(new TimeDateBridge());
+        addGlobalBridge(new TabControl(this.main));
     }
 
     /**

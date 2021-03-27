@@ -47,12 +47,19 @@ import sleep.bridges.io.*;
 import java.util.zip.*;
 import javax.crypto.*;
 import java.security.*;
+import shadowstrike.Globals;
+import shadowstrike.ShadowStrike;
+import shadowstrike.ui.ScriptConsole;
 
 import sleep.taint.*;
 
 /** provides IO functions for the sleep language */
 public class BasicIO implements Loadable, Function
 {
+    ShadowStrike main;
+    public BasicIO(ShadowStrike main) {
+        this.main = main;
+    }
     public void scriptUnloaded(ScriptInstance aScript)
     {
     }
@@ -116,10 +123,10 @@ public class BasicIO implements Loadable, Function
 
         temp.put("&setEncoding", this);
 
-        println f_println = new println();
+        println f_println = new println(main);
         temp.put("&println",    f_println);
         temp.put("&printf",    f_println); // I need to fix my unit tests to get rid of the printf function... grr
-        temp.put("&printAll",   new printArray());
+        temp.put("&printAll",   new printArray(main));
         temp.put("&printEOF",   new printEOF());
 
         temp.put("&getConsole", new getConsoleObject());
@@ -606,12 +613,16 @@ public class BasicIO implements Loadable, Function
 
     private static class println implements Function
     {
+        ShadowStrike main;
+        public println(ShadowStrike main) {
+            this.main = main;
+        }
        public Scalar evaluate(String n, ScriptInstance i, Stack l)
        {
-          IOObject a = chooseSource(l, 2, i);
-
           String temp = BridgeUtilities.getString(l, "");
-          a.printLine(temp);
+          for (ScriptConsole console:Globals.consoles) {
+              console.writeToConsole(temp);
+          }
 
           return SleepUtils.getEmptyScalar();
        }
@@ -619,14 +630,18 @@ public class BasicIO implements Loadable, Function
 
     private static class printArray implements Function
     {
+        public ShadowStrike main;
+        public printArray(ShadowStrike main) {
+            this.main = main;
+        }
        public Scalar evaluate(String n, ScriptInstance inst, Stack l)
        {
-          IOObject a       = chooseSource(l, 2, inst);
-
           Iterator i = BridgeUtilities.getIterator(l, inst);
           while (i.hasNext())
           {
-             a.printLine(i.next().toString());
+             for (ScriptConsole console:Globals.consoles) {
+                 console.writeToConsole(i.next().toString());
+             }
           }
 
           return SleepUtils.getEmptyScalar();

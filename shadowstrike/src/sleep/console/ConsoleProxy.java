@@ -46,7 +46,11 @@ public interface ConsoleProxy
     * @param message the message to print
     */
    public void consolePrintln (Object message);
-
+    /**
+    * clears the console
+    * @param message the message to print
+    */
+   public void consoleClear();
    /** read a message in from the console.  this method should block until a line is read. */
    public String consoleReadln ();
 }

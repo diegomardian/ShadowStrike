@@ -33,6 +33,7 @@ package sleep.console;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import javax.swing.JScrollBar;
 import shadowstrike.ui.ScriptConsole;
 import sleep.bridges.io.*;
 import sleep.console.ConsoleProxy;
@@ -53,6 +54,9 @@ public class ShadowScriptProxy implements ConsoleProxy
    public void consolePrintln(Object message)
    {
       this.console.writeToConsole(message);
+   }
+   public void consoleClear() {
+       this.console.clear();
    }
 
    public String consoleReadln()

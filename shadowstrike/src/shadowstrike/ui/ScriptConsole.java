@@ -68,10 +68,13 @@ public class ScriptConsole extends javax.swing.JPanel {
     public ShadowStrike main;
     public volatile ArrayList<String> in;
     public ConsoleImplementation console;
-    
-    public ScriptConsole(ShadowStrike main) {
+    public String name;
+    public int id;
+    public ScriptConsole(ShadowStrike main, String name, int id) {
         initComponents();
         this.main = main;
+        this.name = name;
+        this.id = id;
         this.jScrollPane2.getViewport().setBackground(Color.BLACK);
         this.jScrollPane2.getViewport().setForeground(Color.WHITE);
         this.text = "";
@@ -120,7 +123,6 @@ public class ScriptConsole extends javax.swing.JPanel {
         sTextField1.setBackground(java.awt.Color.black);
         sTextField1.setBorder(null);
         sTextField1.setForeground(java.awt.Color.white);
-        sTextField1.setText("   ");
         sTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 sTextField1ActionPerformed(evt);
@@ -201,21 +203,25 @@ public class ScriptConsole extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JEditorPane jEditorPane1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JScrollPane jScrollPane2;
+    public volatile javax.swing.JScrollPane jScrollPane2;
     private shadowstrike.components.STextField sTextField1;
     // End of variables declaration//GEN-END:variables
 
     public void writeToConsole(Object command) {
         text += command + "<br>";
         this.jEditorPane1.setText("<html><body>"+text+"<br><body/></html>");
+        this.jEditorPane1.setCaretPosition(jEditorPane1.getDocument().getLength());;
+    }
+    public void clear() {
+        text = "";
+        this.jEditorPane1.setText("<html><body>"+text+"<body/></html>");
+        this.jEditorPane1.setCaretPosition(jEditorPane1.getDocument().getLength());;
     }
     public String readLine() {
         while (true) {
-//            System.out.println();
             if (!(in.size() == 0)) {
                 String val = in.get(0);
                 in.remove(0);
-                System.out.println(val);
                 return val;
             }
         }

@@ -44,8 +44,13 @@ import javax.swing.table.DefaultTableModel;
 public class Database {
     public String connString;
     public Connection con;
+    public boolean isConnected = false;
     public Database(String connString) {
         this.connString = connString;
+        this.isConnected = false;
+    }
+    public boolean getIsConnected() {
+        return this.isConnected;
     }
     
     
@@ -54,7 +59,9 @@ public class Database {
         Connection conn = null;
         try {
             conn = DriverManager.getConnection(this.connString);
+            isConnected = true;
         } catch (SQLException e) {
+            isConnected = false;
             return false;
         }
         this.con = conn;
@@ -64,8 +71,10 @@ public class Database {
     public void close() {
         try {
             this.con.close();
+            isConnected = false;
         }
         catch (SQLException e) {
+            
         }
     }
     public String insertClient(int id, String name, String os, String username, String ipAddress, String listener, String architecture, String protocal, String shelltype) {

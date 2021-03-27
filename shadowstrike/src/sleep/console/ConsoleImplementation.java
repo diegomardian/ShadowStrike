@@ -37,7 +37,6 @@ import shadowstrike.ShadowStrike;
 import shadowstrike.utils.HtmlColors;
 
 import sleep.interfaces.*;
-
 import sleep.engine.*;
 import sleep.error.*;
 import sleep.parser.*;
@@ -147,86 +146,111 @@ public class ConsoleImplementation implements RuntimeWarningWatcher, Loadable, C
 
    /** Dummy implementation, does nothing. */
    public void consolePrintln(Object m) { }
+   
+   public void consoleClear() {}
 
 
    /** starts the console */
-   public void rppl() throws IOException
-   {
-       
+    public void rppl() throws IOException
+    {
 
-
-       String input;
-       StringBuffer code   = new StringBuffer();
-       String       repeat = ""; 
-       while (true)
-       {
-          input = getProxy().consoleReadln();
-          getProxy().consolePrint("shadowstrike> "+input);
-          if (input != null)
-          {
-             String command, args, filter;
-             if (input.indexOf(' ') > -1)
-             {
-                command = input.substring(0, input.indexOf(' '));
-                args    = input.substring(command.length() + 1, input.length());
-                //Strings.shellSplit(input.substring(command.length() + 1, input.length()));
-             }
-             else
-             {
-                command = input;
-                args    = null;
-             }
-
-             if (command.equals("version"))
-             {
-                getProxy().consolePrintln("ShadowScript 1.0 BETA");
-             }
-             else if (command.equals("help") && args != null)
-             {
-                help(args);
-             }
-             else if (command.equals("help"))
-             {
-                help();
-             }
-             else if (command.equals("ls"))
-             {
-                list();
-             }
-             else if (command.equals("load") && args != null)
-             {
-                load(args);
-             }
-             else if (command.equals("unload") && args != null)
-             {
-                unload(args);
-             }
-             else if (command.equals("e")) {
-                Scalar value = eval(args + ";", args);
+        String input;
+        StringBuffer code = new StringBuffer();
+        String repeat = ""; 
+        while (true)
+        {
+            input = getProxy().consoleReadln();
+            getProxy().consolePrint("shadowstrike> "+input);
+            if (input != null)
+            {
+                List<String> args = Collections.emptyList();
+                ArrayList<String> splitCommands; 
+                String command, filter;
+                command = "";
+                input = input.trim();
+                splitCommands = shadowstrike.utils.Strings.shellSplit(input);
+                if (splitCommands.size() == 0) {
+                    continue;
+                }
+                else if (splitCommands.size() == 1) {
+                    command = splitCommands.get(0);
+                    args = Collections.emptyList();
+                }
+                else {
+                    command = splitCommands.get(0);
+                    args = splitCommands.subList(1, splitCommands.size()-1);
+                }
                 
-                if (value != null) { getProxy().consolePrintln(value + ""); }
-             }
-             else if (command.equals("x") && args != null)
-             {
-                Scalar value = eval("return " + args + ";", args);
-                if (value != null) { getProxy().consolePrintln(value + ""); }
-             }
-             else if (command.equals("?") && args != null)
-             {
-                Scalar value = eval("return iff(" + args + ", 'true', 'false');", args);
-                if (value != null) { getProxy().consolePrintln(value + ""); }
-             }
-             else if (command.trim().length() > 0)
-             {
-                getProxy().consolePrintln(HtmlColors.error+"Command '"+command+"' not found. Type 'help' if you need it");
-             } 
-          }
-          
-          
-      }
+                System.out.println(args);
+                System.out.println(command);
+
+
+
+                if (command.equals("version"))
+                {
+                   getProxy().consolePrintln("ShadowScript 1.0 BETA");
+                }
+                else if (command.equals("help"))
+                {
+                    if (args.size() >= 1) {
+                        help(args.get(0));
+                    }
+                    else {
+                        help();
+                    }
+                }
+                else if (command.equals("ls"))
+                {
+                   list();
+                }
+                else if (command.equals("clear")) {
+                    getProxy().consoleClear();
+                }
+                else if (command.equals("load"))
+                {
+                    if (args.size() >= 1) {
+                        load(args.get(0));
+                    }
+                    else {
+                        getProxy().consolePrintln(HtmlColors.error+" Please specify a script to load");
+                    }
+                }
+                else if (command.equals("unload") && args != null)
+                {
+                    if (args.size() >= 1) {
+                        unload(args.get(0));
+                    }
+                    else {
+                        getProxy().consolePrintln(HtmlColors.error+" Please specify a script to load");
+                    }
+                   
+                }
+                else if (command.equals("e")) {
+                   Scalar value = eval(args + ";", String.join(" ", args));
+
+                   if (value != null) { getProxy().consolePrintln(value + ""); }
+                }
+                else if (command.equals("x") && args != null)
+                {
+                   Scalar value = eval("return " + args + ";", String.join(" ", args));
+                   if (value != null) { getProxy().consolePrintln(value + ""); }
+                }
+                else if (command.equals("?") && args != null)
+                {
+                   Scalar value = eval("return iff(" + args + ", 'true', 'false');", String.join(" ", args));
+                   if (value != null) { getProxy().consolePrintln(value + ""); }
+                }
+                else 
+                {
+                   getProxy().consolePrintln(HtmlColors.error+"Command '"+command+"' not found. Type 'help' if you need it");
+                } 
+            }
+
+
+        }
 
       
-   }
+    }
 
    private void help()
    {
@@ -297,7 +321,6 @@ public class ConsoleImplementation implements RuntimeWarningWatcher, Loadable, C
             {
                script.setDebugFlags(Integer.parseInt(System.getProperty("sleep.debug")));
             }
-
             script.runScript();
           }
        }

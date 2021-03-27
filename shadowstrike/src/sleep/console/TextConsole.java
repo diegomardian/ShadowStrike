@@ -219,6 +219,11 @@ public class TextConsole implements ConsoleProxy
    {
       System.out.print(message);
    }
+   public void consoleClear()
+   {
+      System.out.print("Clearing is not supported here. Use shadowstrike console");
+   }
+
 
    public void consolePrintln(Object message)
    {
