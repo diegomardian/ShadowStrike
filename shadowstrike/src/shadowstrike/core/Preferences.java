@@ -1,4 +1,4 @@
-/* 
+/*
  * BSD 3-Clause License
  * 
  * Copyright (c) 2021, Diego Mardian
@@ -29,14 +29,12 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package shadowstrike;
+package shadowstrike.core;
 
-import java.io.Serializable;
-import java.util.ArrayList;
-import shadowstrike.core.Preferences;
-public class Data implements Serializable {
-    public Preferences prefrences;
-    public Data() {
-        this.prefrences = new Preferences();
-    }
+/**
+ *
+ * @author root
+ */
+public class Preferences {
+    
 }

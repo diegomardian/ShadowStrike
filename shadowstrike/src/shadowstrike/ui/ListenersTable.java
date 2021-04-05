@@ -30,6 +30,8 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 package shadowstrike.ui;
+import shadowstrike.utils.Printer;
+import javax.swing.JDialog;
 import shadowstrike.ShadowStrike;
 /**
  *
@@ -148,6 +150,11 @@ public class ListenersTable extends javax.swing.JPanel {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
+        JDialog dialog = new javax.swing.JDialog(this.main, "Add Listener");
+        dialog.add(new AddListenerDialog(this.main));
+        dialog.pack();
+        dialog.setVisible(true);
+        Printer.plain("hello");
     }//GEN-LAST:event_jButton4ActionPerformed
 
 

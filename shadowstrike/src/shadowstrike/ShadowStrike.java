@@ -385,7 +385,7 @@ public class ShadowStrike extends javax.swing.JFrame {
     jMenuBar1.setFont(new java.awt.Font("DejaVu Sans", 0, 15)); // NOI18N
 
     jMenu1.setText("Shadow Strike");
-    jMenu1.setFont(new java.awt.Font("DejaVu Sans", 0, 15)); // NOI18N
+    jMenu1.setFont(new java.awt.Font("SansSerif", 0, 15)); // NOI18N
 
     PreferencesMenuItem.setText("Preferences");
     jMenu1.add(PreferencesMenuItem);

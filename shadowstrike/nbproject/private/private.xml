@@ -2,21 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/root/sync/coding/Kali/ShadowStrike/v1.0/shadowstrike/src/sleep/console/ShadowScriptProxy.java</file>
-            <file>file:/root/sync/coding/Kali/ShadowStrike/v1.0/shadowstrike/src/sleep/bridges/TabControl.java</file>
-            <file>file:/root/sync/coding/Kali/ShadowStrike/v1.0/shadowstrike/src/shadowstrike/ui/ListenersTable.java</file>
-            <file>file:/root/sync/coding/Kali/ShadowStrike/v1.0/shadowstrike/src/shadowstrike/database/Database.java</file>
-            <file>file:/root/sync/coding/Kali/ShadowStrike/v1.0/shadowstrike/src/shadowstrike/Data.java</file>
-            <file>file:/root/sync/coding/Kali/ShadowStrike/v1.0/shadowstrike/src/shadowstrike/Globals.java</file>
-            <file>file:/root/sync/coding/Kali/ShadowStrike/v1.0/shadowstrike/src/sleep/bridges/FileSystemBridge.java</file>
-            <file>file:/root/sync/coding/Kali/ShadowStrike/v1.0/shadowstrike/src/shadowstrike/ui/SessionTable.java</file>
-            <file>file:/root/sync/coding/Kali/ShadowStrike/v1.0/shadowstrike/src/shadowstrike/utils/Printer.java</file>
-            <file>file:/root/sync/coding/Kali/ShadowStrike/v1.0/shadowstrike/src/sleep/runtime/ScriptLoader.java</file>
-            <file>file:/root/sync/coding/Kali/ShadowStrike/v1.0/shadowstrike/src/shadowstrike/utils/HtmlColors.java</file>
-            <file>file:/root/sync/coding/Kali/ShadowStrike/v1.0/shadowstrike/src/sleep/console/ConsoleImplementation.java</file>
-            <file>file:/root/sync/coding/Kali/ShadowStrike/v1.0/shadowstrike/src/shadowstrike/ShadowStrike.java</file>
-            <file>file:/root/sync/coding/Kali/ShadowStrike/v1.0/shadowstrike/src/shadowstrike/ui/ScriptConsole.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>
