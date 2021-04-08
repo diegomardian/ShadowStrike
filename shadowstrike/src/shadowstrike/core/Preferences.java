@@ -31,10 +31,19 @@
  */
 package shadowstrike.core;
 
+import java.awt.Font;
+
 /**
  *
  * @author root
  */
-public class Preferences {
-    
+public class Preferences implements java.io.Serializable {
+   public Font menuBarFont; 
+   public Font tabTitleFont;
+   public Font dialogInputFont;
+   public Preferences() {
+       menuBarFont = new Font("Cantarell", 0, 19);
+       tabTitleFont = new Font("Cantarell", 0, 16);
+       dialogInputFont = new Font("Cantarell", 0, 16);
+   }
 }

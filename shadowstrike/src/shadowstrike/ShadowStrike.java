@@ -30,6 +30,7 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 package shadowstrike;
+import shadowstrike.core.Data;
 import shadowstrike.ui.ListenersTable;
 import java.awt.Color;
 import java.awt.Font;
@@ -73,12 +74,10 @@ public class ShadowStrike extends javax.swing.JFrame {
     public String scriptData;
     public String path;
     public ShadowStrike() {
-        initComponents();
+        
         this.scriptData = "";
         this.scriptLoader = new ScriptLoader(this);
-        this.jSplitPane1.setTopComponent(new SessionTable());
-        openScriptConosle();
-        openListenerTable();
+        
         path = "";
         try {
             path = new File(ShadowStrike.class.getProtectionDomain().getCodeSource().getLocation()
@@ -130,8 +129,10 @@ public class ShadowStrike extends javax.swing.JFrame {
             }
             
         }
-        
-        
+        initComponents();
+        this.jSplitPane1.setTopComponent(new SessionTable());
+        openScriptConosle();
+        openListenerTable();
     }
     public void close() {
         FileOutputStream file;
@@ -384,8 +385,8 @@ public class ShadowStrike extends javax.swing.JFrame {
 
     jMenuBar1.setFont(new java.awt.Font("DejaVu Sans", 0, 15)); // NOI18N
 
+    jMenu1.setFont(Globals.data.prefrences.menuBarFont);
     jMenu1.setText("Shadow Strike");
-    jMenu1.setFont(new java.awt.Font("SansSerif", 0, 15)); // NOI18N
 
     PreferencesMenuItem.setText("Preferences");
     jMenu1.add(PreferencesMenuItem);
@@ -408,8 +409,8 @@ public class ShadowStrike extends javax.swing.JFrame {
 
     jMenuBar1.add(jMenu1);
 
+    jMenu1.setFont(Globals.data.prefrences.menuBarFont);
     jMenu2.setText("View");
-    jMenu2.setFont(new java.awt.Font("DejaVu Sans", 0, 15)); // NOI18N
 
     jMenuItem1.setText("Script Console");
     jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
@@ -421,8 +422,8 @@ public class ShadowStrike extends javax.swing.JFrame {
 
     jMenuBar1.add(jMenu2);
 
+    jMenu1.setFont(Globals.data.prefrences.menuBarFont);
     jMenu3.setText("Attacks");
-    jMenu3.setFont(new java.awt.Font("DejaVu Sans", 0, 15)); // NOI18N
     jMenuBar1.add(jMenu3);
 
     setJMenuBar(jMenuBar1);

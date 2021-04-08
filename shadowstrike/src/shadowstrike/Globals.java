@@ -31,6 +31,7 @@
  */
 package shadowstrike;
 
+import shadowstrike.core.Data;
 import java.util.ArrayList;
 import shadowstrike.ui.ScriptConsole;
 import shadowstrike.ui.ListenersTable;
