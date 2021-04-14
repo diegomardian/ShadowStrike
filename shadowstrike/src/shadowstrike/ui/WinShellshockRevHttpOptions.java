@@ -30,6 +30,8 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 package shadowstrike.ui;
+import javax.swing.DefaultComboBoxModel;
+import shadowstrike.Globals;
 import shadowstrike.ShadowStrike;
 /**
  *
@@ -48,6 +50,8 @@ public class WinShellshockRevHttpOptions extends javax.swing.JPanel {
         this.name = name;
         this.main = main;
         initComponents();
+        Object[] choices = Globals.data.profiles.keySet().toArray();
+        this.jComboBox1.setModel(new DefaultComboBoxModel(choices));
     }
 
     /**
@@ -61,9 +65,16 @@ public class WinShellshockRevHttpOptions extends javax.swing.JPanel {
         java.awt.GridBagConstraints gridBagConstraints;
 
         jLabel3 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        httpHostTextField = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        httpPortTextField = new javax.swing.JTextField();
+        jCheckBox1 = new javax.swing.JCheckBox();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        httpStagerHostTextField = new javax.swing.JTextField();
+        httpStagerPortTextField = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
 
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setLayout(new java.awt.GridBagLayout());
@@ -75,13 +86,13 @@ public class WinShellshockRevHttpOptions extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(0, 12, 0, 12);
         add(jLabel3, gridBagConstraints);
 
-        jTextField2.setColumns(30);
+        httpHostTextField.setColumns(30);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.weightx = 0.2;
-        add(jTextField2, gridBagConstraints);
+        add(httpHostTextField, gridBagConstraints);
 
         jLabel4.setFont(new java.awt.Font("Cantarell", 0, 16)); // NOI18N
         jLabel4.setText("Http Port:");
@@ -92,19 +103,79 @@ public class WinShellshockRevHttpOptions extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(0, 12, 0, 12);
         add(jLabel4, gridBagConstraints);
 
-        jTextField1.setText("80");
+        httpPortTextField.setText("80");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 1;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        add(jTextField1, gridBagConstraints);
+        add(httpPortTextField, gridBagConstraints);
+
+        jCheckBox1.setText("Stager");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 5;
+        gridBagConstraints.gridwidth = java.awt.GridBagConstraints.REMAINDER;
+        add(jCheckBox1, gridBagConstraints);
+
+        jLabel1.setText("Http Host (Stager):");
+        jLabel1.setEnabled(false);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 12, 0, 12);
+        add(jLabel1, gridBagConstraints);
+
+        jLabel2.setText("Http Port  (Stager):");
+        jLabel2.setEnabled(false);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 12, 0, 12);
+        add(jLabel2, gridBagConstraints);
+
+        httpStagerHostTextField.setEnabled(false);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        add(httpStagerHostTextField, gridBagConstraints);
+
+        httpStagerPortTextField.setEnabled(false);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        add(httpStagerPortTextField, gridBagConstraints);
+
+        jLabel5.setText("Profile:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
+        gridBagConstraints.insets = new java.awt.Insets(0, 12, 0, 12);
+        add(jLabel5, gridBagConstraints);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        add(jComboBox1, gridBagConstraints);
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    public javax.swing.JTextField jTextField1;
-    public javax.swing.JTextField jTextField2;
+    public javax.swing.JTextField httpHostTextField;
+    public javax.swing.JTextField httpPortTextField;
+    public javax.swing.JTextField httpStagerHostTextField;
+    public javax.swing.JTextField httpStagerPortTextField;
+    public javax.swing.JCheckBox jCheckBox1;
+    private javax.swing.JComboBox<String> jComboBox1;
+    public javax.swing.JLabel jLabel1;
+    public javax.swing.JLabel jLabel2;
+    public javax.swing.JLabel jLabel3;
+    public javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     // End of variables declaration//GEN-END:variables
 }

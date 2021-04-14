@@ -1,4 +1,4 @@
-/* 
+/*
  * BSD 3-Clause License
  * 
  * Copyright (c) 2021, Diego Mardian
@@ -29,37 +29,37 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package shadowstrike.core;
+package shadowstrike.ui;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Scanner;
-import org.openide.util.Exceptions;
-import shadowstrike.core.Preferences;
-public class Data implements Serializable {
-    public Preferences prefrences;
-    public String events;
-    public HashMap<String, Profile> profiles;
-    public Data() {
-        this.prefrences = new Preferences();
-        this.events = "";
-        this.profiles = new HashMap<>();
-        File myObj = new File("/root/defualt.profile");
-        Scanner myReader;
-        String script = "";
-        try {
-            myReader = new Scanner(myObj);
-            while (myReader.hasNextLine()) {
-                script += myReader.nextLine();
-            }
-            myReader.close();
-            this.profiles.put("default", new Profile(script));
-        } catch (FileNotFoundException ex) {
-            Exceptions.printStackTrace(ex);
-        }
+import java.awt.Window;
+import javax.swing.JOptionPane;
+
+/**
+ *
+ * @author root
+ */
+public class Popups {
+    public Popups() {
         
     }
+    public static void error(String message, Window frame) {
+        JOptionPane.showMessageDialog(frame,
+        message,
+        "Error",
+        JOptionPane.ERROR_MESSAGE);
+    }
+    public static void error(String message, Window frame, String title) {
+        JOptionPane.showMessageDialog(frame,
+        message,
+        title,
+        JOptionPane.ERROR_MESSAGE);
+    }
+    
+    public static void cutom(String message, Window frame, String title, int type) {
+        JOptionPane.showMessageDialog(frame,
+        message,
+        title,
+        type);
+    }
+    
 }

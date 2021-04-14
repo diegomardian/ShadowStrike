@@ -1,4 +1,4 @@
-/* 
+/*
  * BSD 3-Clause License
  * 
  * Copyright (c) 2021, Diego Mardian
@@ -29,37 +29,42 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package shadowstrike.core;
+package shadowstrike.listeners.shellshock_http;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Scanner;
-import org.openide.util.Exceptions;
-import shadowstrike.core.Preferences;
-public class Data implements Serializable {
-    public Preferences prefrences;
-    public String events;
-    public HashMap<String, Profile> profiles;
-    public Data() {
-        this.prefrences = new Preferences();
-        this.events = "";
-        this.profiles = new HashMap<>();
-        File myObj = new File("/root/defualt.profile");
-        Scanner myReader;
-        String script = "";
-        try {
-            myReader = new Scanner(myObj);
-            while (myReader.hasNextLine()) {
-                script += myReader.nextLine();
-            }
-            myReader.close();
-            this.profiles.put("default", new Profile(script));
-        } catch (FileNotFoundException ex) {
-            Exceptions.printStackTrace(ex);
-        }
+import java.io.IOException;
+import java.net.ServerSocket;
+import shadowstrike.ShadowStrike;
+
+/**
+ *
+ * @author root
+ */
+public class ShellshockRevHttp {
+    public String httpHost;
+    public String httpPort;
+    public ShadowStrike main;
+    public 
+    public ShellshockRevHttp(String httpHost, String httpPort, ShadowStrike main) {
+        this.httpHost = httpHost;
+        this.httpPort = httpPort;
+        this.main = main;
+    }
+    public boolean start() {
         
+    }
+    public void run() {
+        try {
+            ServerSocket serverConnect = new ServerSocket(PORT);
+
+            // we listen until user halts server execution
+            while (true) {
+                ShellshockRevHttpRequest server = new ShellshockRevHttpRequest(serverConnect.accept());
+                Thread thread = new Thread(server);
+                thread.start();
+            }
+
+        } catch (IOException e) {
+                System.err.println("Server Connection error : " + e.getMessage());
+        }
     }
 }

@@ -1,4 +1,4 @@
-/* 
+/*
  * BSD 3-Clause License
  * 
  * Copyright (c) 2021, Diego Mardian
@@ -31,35 +31,13 @@
  */
 package shadowstrike.core;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Scanner;
-import org.openide.util.Exceptions;
-import shadowstrike.core.Preferences;
-public class Data implements Serializable {
-    public Preferences prefrences;
-    public String events;
-    public HashMap<String, Profile> profiles;
-    public Data() {
-        this.prefrences = new Preferences();
-        this.events = "";
-        this.profiles = new HashMap<>();
-        File myObj = new File("/root/defualt.profile");
-        Scanner myReader;
-        String script = "";
-        try {
-            myReader = new Scanner(myObj);
-            while (myReader.hasNextLine()) {
-                script += myReader.nextLine();
-            }
-            myReader.close();
-            this.profiles.put("default", new Profile(script));
-        } catch (FileNotFoundException ex) {
-            Exceptions.printStackTrace(ex);
-        }
-        
+/**
+ *
+ * @author root
+ */
+public class Profile {
+    public String script;
+    public Profile(String script) {
+        this.script = script;
     }
 }

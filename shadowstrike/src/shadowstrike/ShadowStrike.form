@@ -51,7 +51,7 @@
             <Property name="text" type="java.lang.String" value="View"/>
           </Properties>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="jMenu1.setFont(Globals.data.prefrences.menuBarFont);"/>
+            <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="System.out.println(Globals.data.prefrences.menuBarFont.getSize());&#xa;jMenu2.setFont(Globals.data.prefrences.menuBarFont);"/>
           </AuxValues>
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItem1">
@@ -69,7 +69,7 @@
             <Property name="text" type="java.lang.String" value="Attacks"/>
           </Properties>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="jMenu1.setFont(Globals.data.prefrences.menuBarFont);"/>
+            <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="jMenu3.setFont(Globals.data.prefrences.menuBarFont);"/>
           </AuxValues>
         </Menu>
       </SubComponents>

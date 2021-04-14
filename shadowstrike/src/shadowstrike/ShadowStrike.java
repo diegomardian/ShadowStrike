@@ -170,7 +170,7 @@ public class ShadowStrike extends javax.swing.JFrame {
         JPanel pnlTab = new JPanel(new GridBagLayout());
         pnlTab.setOpaque(false);
         JLabel lblTitle = new JLabel("Listeners"+number);
-        lblTitle.setFont(new Font("DejaVu Sans", 0, 15));
+        lblTitle.setFont(Globals.data.prefrences.tabTitleFont);
         JButton btnClose = new JButton("x");
 
         GridBagConstraints gbc = new GridBagConstraints();
@@ -204,7 +204,7 @@ public class ShadowStrike extends javax.swing.JFrame {
         JPanel pnlTab = new JPanel(new GridBagLayout());
         pnlTab.setOpaque(false);
         JLabel lblTitle = new JLabel("Script Console"+number);
-        lblTitle.setFont(new Font("DejaVu Sans", 0, 15));
+        lblTitle.setFont(Globals.data.prefrences.tabTitleFont);
         JButton btnClose = new JButton("x");
 
         GridBagConstraints gbc = new GridBagConstraints();
@@ -409,7 +409,8 @@ public class ShadowStrike extends javax.swing.JFrame {
 
     jMenuBar1.add(jMenu1);
 
-    jMenu1.setFont(Globals.data.prefrences.menuBarFont);
+    System.out.println(Globals.data.prefrences.menuBarFont.getSize());
+    jMenu2.setFont(Globals.data.prefrences.menuBarFont);
     jMenu2.setText("View");
 
     jMenuItem1.setText("Script Console");
@@ -422,7 +423,7 @@ public class ShadowStrike extends javax.swing.JFrame {
 
     jMenuBar1.add(jMenu2);
 
-    jMenu1.setFont(Globals.data.prefrences.menuBarFont);
+    jMenu3.setFont(Globals.data.prefrences.menuBarFont);
     jMenu3.setText("Attacks");
     jMenuBar1.add(jMenu3);
 

@@ -1,4 +1,4 @@
-/* 
+/*
  * BSD 3-Clause License
  * 
  * Copyright (c) 2021, Diego Mardian
@@ -29,37 +29,51 @@
  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package shadowstrike.core;
-
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Scanner;
-import org.openide.util.Exceptions;
-import shadowstrike.core.Preferences;
-public class Data implements Serializable {
-    public Preferences prefrences;
-    public String events;
-    public HashMap<String, Profile> profiles;
-    public Data() {
-        this.prefrences = new Preferences();
-        this.events = "";
-        this.profiles = new HashMap<>();
-        File myObj = new File("/root/defualt.profile");
-        Scanner myReader;
-        String script = "";
-        try {
-            myReader = new Scanner(myObj);
-            while (myReader.hasNextLine()) {
-                script += myReader.nextLine();
-            }
-            myReader.close();
-            this.profiles.put("default", new Profile(script));
-        } catch (FileNotFoundException ex) {
-            Exceptions.printStackTrace(ex);
-        }
+package shadowstrike.utils;
+import org.apache.commons.validator.routines.InetAddressValidator;
+/**
+ *
+ * @author root
+ */
+public class Validator {
+    public Validator() {
         
+    }
+    public static boolean ipv4(String data) {
+      InetAddressValidator validator = InetAddressValidator.getInstance();  
+      return validator.isValidInet4Address(data);
+    }
+    public static boolean ipv6(String data) {
+        InetAddressValidator validator = InetAddressValidator.getInstance();  
+      return validator.isValidInet6Address(data);
+    }
+    public static boolean isInteger(String s) {
+        return isInteger(s,10);
+    }
+
+    public static boolean isInteger(String s, int radix) {
+        if(s.isEmpty()) return false;
+        for(int i = 0; i < s.length(); i++) {
+            if(i == 0 && s.charAt(i) == '-') {
+                if(s.length() == 1) return false;
+                else continue;
+            }
+            if(Character.digit(s.charAt(i),radix) < 0) return false;
+        }
+        return true;
+    }
+    
+    public static boolean tcpPort(String data) {
+        if (data.isEmpty() || data.equals(null)) {
+            return false;
+        }
+
+        if (isInteger(data)) {
+            if (Integer.parseInt(data) < 65536) {
+                return true;
+            }
+        }
+
+        return false;
     }
 }

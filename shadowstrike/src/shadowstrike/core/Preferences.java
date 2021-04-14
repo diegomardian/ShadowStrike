@@ -42,7 +42,7 @@ public class Preferences implements java.io.Serializable {
    public Font tabTitleFont;
    public Font dialogInputFont;
    public Preferences() {
-       menuBarFont = new Font("Cantarell", 0, 19);
+       menuBarFont = new Font("Cantarell", 0, 16);
        tabTitleFont = new Font("Cantarell", 0, 16);
        dialogInputFont = new Font("Cantarell", 0, 16);
    }
