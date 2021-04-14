@@ -15,12 +15,6 @@ git clone https://github.com/diegomardian/ShadowStrike.git
 5. Select the shadowstrike folder and click Open Project
 <br>To build Shadow Strike click the hammer icon on the toolbar. If that is not there go to Run->Build Project.<br>
 To run Shadow Strike click the play icon on the toolbar. If that is not there go to Run->Run Project.<br>
-# Donation
-If you would like to support this project please send any amount of cryptocurrency to one of the following wallet addresses<br>
-BTC: 3LnfyT511cotCerjHzpinZiR1a5qW1kuxz<br>
-LTC: MVuKtctV2Ri3uWpq33nHFZTNArpzNs3KSY<br>
-XMR: 8C8WpxBNZic452RpNfK5N5fX3wmXsAE1nESGSi6zHaWRR9GN4ULH9x8UPBqzrCEZmo4M1ehyr2zSGQjQU5VNWDHZGf9FjiN<br>
-BCH: 3PvJz9SJYYCTGYUvw7Xje4faeKbENBEV1i<br>
 
 
 # Disclamer
